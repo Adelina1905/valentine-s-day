@@ -1,37 +1,89 @@
-html{
+@font-face {
+    font-family: 'Last-Christmas';
+    src: url('./fonts/last_christmas/LastChristmas_PERSONAL_USE_ONLY.otf') format('opentype');
+}
+@font-face {
+    font-family: 'Vogue';
+    src: url('./fonts/vogue/Vogue.ttf') format('truetype');
+}
+body{
     width: 100vw;
     height: 100vh;
-    background-color: pink;
+    margin: 0;
+    background-image: url("./images/strawberry.svg");
+    position: relative;
 }
 .container{
-    display: flex;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -45%);
+}   
+.strawberry{
     position: relative;
-    text-align: center;
-    width: auto;
-    height: 100vh;
-    justify-content: center;
-    align-items: center;
 }
 .image{
     position:absolute;
     width: 60vh;
+    z-index: 100;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -54%);
+}
+.container-text{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -60%);
+    width: 80%;
+    text-align: center;
+
 }
 .question{
-    position: absolute;
-    top: 40%;
+    font-family: 'Last-Christmas', sans-serif;
+    font-size: 67px;  
+    font-weight: 100;  
+    color: #4A0103;
+    line-height: 150%;
 }
-.btn-yes, .btn-no{
-    position: absolute;
-    border: 0;
-    top: 50%;
+.Valentine{
+    font-family: 'Vogue', sans-serif;
+    font-size: 132px;
+    color: #9E182B;
+}
+.btn-no, .btn-yes{
+    width: 170px;
+    height: 57px;
+    padding: 5px 64px 0 64px;
+    font-size: 25px;
+    font-family: 'Vogue', sans-serif;
+    border: 3px solid #9E182B;
+    border-radius: 90px;
+    cursor: pointer;
 }
 
 .btn-yes{
-    translate: -100% 0;
-    background-color: ivory;
+    background-color: transparent;
+    color: #9E182B;
+    margin-right: 10px;
+    transform: translate(-50%);
+}
+.btn-yes:hover{
+    background-color: #fae7e7;
+}
+.btn-yes:active{
+    background-color: #fadede;
 }
 .btn-no{
-    translate: 100% 0;
-    background-color: rgb(148, 10, 10);
-    color: white;
+    position: absolute;
+    background-color: #9E182B;
+    color: #FFF6EF;
+    transform: translate(-50%);
+    z-index: 99;
+}
+.btn-no:hover{
+    background-color: #8f1628;
+}
+.btn-no:active{
+    background-color: #7e1424;
 }

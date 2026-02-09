@@ -2,6 +2,7 @@ const buttonNo = document.querySelector(".btn-no");
 const buttonYes = document.querySelector(".btn-yes");
 const container = document.querySelector(".container");
 const image = document.querySelector(".image");
+
 let count = 0;
 let flag = false;
 
@@ -31,18 +32,15 @@ function noWay(){
         
         return;
     }
-    const buttonWidth = buttonNo.offsetWidth;
-    const buttonHeight = buttonNo.offsetHeight;    
+    const minY = -50; // allow 50px above the container top
+    const maxX = (container.clientWidth - buttonNo.offsetWidth);
+    const maxY = (container.clientHeight - buttonNo.offsetHeight)-200;
 
-    const containerWidth = container.offsetWidth - buttonWidth;
-    const containerHeight = container.offsetHeight - buttonHeight;
-
-    const randomX = Math.floor(Math.random() * (containerWidth - buttonWidth));
-    const randomY = Math.floor(Math.random() * (containerHeight - buttonHeight));
+    const randomX = Math.floor(Math.random() * (maxX + 1));
+    const randomY = Math.floor(minY + Math.random() * (maxY - minY + 1));
 
     buttonNo.style.top = randomY + "px";
     buttonNo.style.left = randomX + "px";
-
     count++;
 }
 function yes(){
