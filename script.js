@@ -2,18 +2,16 @@ const buttonNo = document.querySelector(".btn-no");
 const buttonYes = document.querySelector(".btn-yes");
 const container = document.querySelector(".container");
 const image = document.querySelector(".image");
-
+const errorPage = document.querySelector(".error")
 let count = 0;
-let flag = false;
-
+let freezeNo = false;
 function hideKitty(){
     image.style.display = "none";
-    count = 0;
-    flag = false;
+    freezeNo = false;  
     buttonNo.removeEventListener("click", mushroom);
     document.body.removeEventListener("click", hideKitty); 
     buttonNo.style.top = "";
-    buttonNo.style.left = "";    
+    buttonNo.style.left = "";  
 }
 function mushroom(e){
     e.stopPropagation();
@@ -21,17 +19,41 @@ function mushroom(e){
     image.setAttribute("src", "./images/mushroom.png");
     flag = true;
 }
+function autoKill(){
+    setTimeout(() => {
+        container.style.display = "none";
+        errorPage.style.display = "block"
+    }, 2000);
+}
+function showCat(src){
+    image.setAttribute("src", `./images/${src}`);
+    image.style.display = "block";
+    freezeNo = true;
+    buttonNo.addEventListener("click", mushroom);
+    document.body.addEventListener("click", hideKitty); 
+}
 function noWay(){
-    if(count >= 4){
-        if(!flag){
-            image.setAttribute("src", "./images/kitty.png");
-        }
-        image.style.display = "block";
-        buttonNo.addEventListener("click", mushroom);
-        document.body.addEventListener("click", hideKitty); 
-        
-        return;
+    if (freezeNo) return; 
+    switch(count){
+        case 5:
+            showCat("huh.png")
+            count++;
+            return;
+        case 8:
+            showCat("kitty.png");
+            count++;
+            return;
+        case 10:
+            showCat("mushroom.png");    
+            count++;
+            return;
+        case 12:
+            showCat("nooo.png"); 
+            autoKill();
+            return;
     }
+
+
     const minY = -50; // allow 50px above the container top
     const maxX = (container.clientWidth - buttonNo.offsetWidth);
     const maxY = (container.clientHeight - buttonNo.offsetHeight)-200;
@@ -43,6 +65,11 @@ function noWay(){
     buttonNo.style.left = randomX + "px";
     count++;
 }
+
+
+
+
+
 function yes(){
     image.style.display = "block";
     image.setAttribute("src", "./images/shyKitty.png");
