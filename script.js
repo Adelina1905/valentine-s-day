@@ -66,9 +66,13 @@ function noWay(){
     count++;
 }
 
-
-
-
+function celebration(){
+    for(let i = 0; i< 3; i++){
+        setTimeout(()=>{
+            image.setAttribute("src", `./images/kissing${i}.png`);
+        }, i*1000)
+    }
+}
 
 function yes(){
     image.style.display = "block";
@@ -76,6 +80,9 @@ function yes(){
     buttonNo.style.display = "none";
     buttonYes.style.display = "none";
     document.querySelector(".question").style.display = "none";
+    setTimeout(()=>{
+        celebration();
+    }, 1500);
 }
 buttonNo.addEventListener("mouseover", noWay);
 buttonYes.addEventListener("click", yes);
