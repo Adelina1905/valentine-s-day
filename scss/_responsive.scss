@@ -1,0 +1,17 @@
+@include media-md {
+    
+        .container {
+            .strawberry {
+                display: none;
+            }
+            .question{
+                &__text{
+                font-size: 1.5rem;
+                &-span{
+                    font-size: 3rem;
+                }
+                }
+                
+            }
+        }
+}

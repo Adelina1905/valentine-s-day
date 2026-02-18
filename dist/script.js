@@ -1,8 +1,9 @@
-const buttonNo = document.querySelector(".btn-no");
-const buttonYes = document.querySelector(".btn-yes");
+const buttonNo = document.querySelector(".question__btn-no");
+const buttonYes = document.querySelector(".question__btn-yes");
 const container = document.querySelector(".container");
 const image = document.querySelector(".image");
-const errorPage = document.querySelector(".error")
+const errorPage = document.querySelector(".backgrounds");
+const imageErrorPage = document.querySelector(".backgrounds__error");
 let count = 0;
 let freezeNo = false;
 function hideKitty(){
@@ -23,6 +24,9 @@ function autoKill(){
     setTimeout(() => {
         container.style.display = "none";
         errorPage.style.display = "block"
+        imageErrorPage.src = "./images/404.png";
+        document.body.style.background = "#FFF";
+
     }, 2000);
 }
 function showCat(src){

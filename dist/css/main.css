@@ -1,0 +1,126 @@
+@font-face {
+  font-family: "Last-Christmas";
+  src: url("../fonts/last_christmas/LastChristmas_PERSONAL_USE_ONLY.otf") format("opentype");
+}
+@font-face {
+  font-family: "Vogue";
+  src: url("../fonts/vogue/Vogue.ttf") format("truetype");
+}
+@media screen and (min-width: 768px) {
+  .container .strawberry {
+    display: none;
+  }
+  .container .question__text {
+    font-size: 1.5rem;
+  }
+  .container .question__text-span {
+    font-size: 3rem;
+  }
+}
+body {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  background-image: url("../images/strawberry.svg");
+  position: relative;
+}
+body .container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -45%);
+}
+body .container .strawberry {
+  display: inline;
+  position: relative;
+}
+body .container .image {
+  position: absolute;
+  width: 70vh;
+  z-index: 100;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -54%);
+}
+body .container .question {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -60%);
+  width: 80%;
+  text-align: center;
+}
+body .container .question__text {
+  font-family: "Last-Christmas", sans-serif;
+  font-size: 4rem;
+  font-weight: 100;
+  color: rgb(91.5879120879, 13.9120879121, 24.9258241758);
+  line-height: 150%;
+}
+body .container .question__text-span {
+  font-family: "Vogue", sans-serif;
+  font-size: 9rem;
+  color: #9E182B;
+}
+body .container .question__btn-yes {
+  width: 170px;
+  height: 57px;
+  padding: 5px 64px 0 64px;
+  font-size: 25px;
+  font-family: "Vogue", sans-serif;
+  border: 3px solid #9E182B;
+  border-radius: 90px;
+  cursor: pointer;
+  background-color: transparent;
+  color: #9E182B;
+  margin-right: 10px;
+  transform: translate(-50%);
+}
+body .container .question__btn-yes:hover {
+  background-color: #fae7e7;
+}
+body .container .question__btn-yes:active {
+  background-color: #fadede;
+}
+body .container .question__btn-no {
+  width: 170px;
+  height: 57px;
+  padding: 5px 64px 0 64px;
+  font-size: 25px;
+  font-family: "Vogue", sans-serif;
+  border: 3px solid #9E182B;
+  border-radius: 90px;
+  cursor: pointer;
+  position: absolute;
+  background-color: #9E182B;
+  color: #FFF6EF;
+  transform: translate(-50%);
+  z-index: 99;
+}
+body .container .question__btn-no:hover {
+  background-color: #8f1628;
+}
+body .container .question__btn-no:active {
+  background-color: #7e1424;
+}
+body .container .question .image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+body .backgrounds {
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  background-color: #fff;
+  z-index: 1000;
+}
+body .backgrounds__error {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1010;
+}/*# sourceMappingURL=main.css.map */
